@@ -9,7 +9,7 @@ var app = express();
 //this is for logger and for using public folder
 app.use(logger("dev"));
 app.use(express.static(__dirname + "/public"));
-app.use(bodyparser.json());
+app.use(bodyParser.json());
 
 //this is for connecting to database
 var db = "mongodb://localhost/meanstack";
@@ -64,7 +64,7 @@ app.post("/login", function(req, res){
 
 
 
-
+//this is as far as I got for today for now. This should be further completed.
 
 //for listening for PORT
 app.listen(PORT, function(){
