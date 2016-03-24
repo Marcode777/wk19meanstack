@@ -50,12 +50,18 @@ app.post("/login", function(req, res){
   })
 });
 
-
-
-
-
-
-
+app.post("/addItem", function(req, res) {
+  console.log(req.body);
+  var newItem = new Item(req.body);
+  newItem.save(function(err, newItem) {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.send(newItem);
+    }
+  });
+});
 
 
 
